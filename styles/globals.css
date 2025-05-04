@@ -1,7 +1,6 @@
 
 @import "tailwindcss/preflight"; 
-@tailwind utilities;
-
+@import "tailwindcss/utilities.css"
 
 .retro-window {
   border-width: 4px; 

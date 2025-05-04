@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface DescriptionWindowProps {
   title: string;
@@ -34,7 +34,7 @@ const modalVariants = {
     top: rect ? rect.bottom + 10 : "50%",
     left: rect ? rect.left : "50%",
     translateX: rect ? 0 : "-50%",
-    translateY: rect ? 0 : "-50%",
+    translateY: 0,
     opacity: 0,
     scale: 0.8,
     transition: { duration: 0.2 },
@@ -72,26 +72,30 @@ const DescriptionWindow: React.FC<DescriptionWindowProps> = ({
   return (
     <motion.div
       ref={windowRef}
-      className="bg-retro-gray-light border-2 border-retro-gray-dark shadow-md rounded-md p-4 w-80 absolute z-10 retro-window"
+      className={`absolute z-10 bg-retro-gray-light border-4 border-outset border-retro-gray-dark shadow-md rounded-md p-0 w-80`}
+      style={{
+        top: iconRect ? `${iconRect.bottom + 10}px` : "50%",
+        left: iconRect ? `${iconRect.left}px` : "50%",
+        transform: iconRect ? "" : "translate(-50%, -50%)",
+      }}
       variants={modalVariants}
       initial="initial"
       animate="animate"
       exit="exit"
       custom={iconRect}
     >
-      <div className="flex justify-between items-center mb-2 bg-retro-gray-dark p-2 border-b-2 border-retro-gray-light">
-        {" "}
-        {/* Title bar */}
+      <div
+        className={`bg-retro-gray-dark p-2 border-b-2 border-retro-gray-light flex justify-between items-center`}
+      >
         <h2 className="text-lg font-bold text-retro-yellow-dark">{title}</h2>
         <button
           onClick={onClose}
-          className="text-gray-600 hover:text-gray-800 focus:outline-none"
+          className="bg-retro-yellow-dark text-black border border-black px-1 text-sm focus:outline-none"
         >
           [x]
-        </button>{" "}
+        </button>
       </div>
       <div className="p-4">
-        {" "}
         <p className="text-sm text-retro-green-dark">{description}</p>
       </div>
     </motion.div>
