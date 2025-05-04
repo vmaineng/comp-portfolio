@@ -1,6 +1,5 @@
 "use client";
 
-import "./globals.css";
 import React, { useState } from "react";
 import Desktop from "./components/Desktop";
 import Icon from "./components/Icon";

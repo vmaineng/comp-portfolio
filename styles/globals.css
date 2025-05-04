@@ -1,6 +1,5 @@
 
-@import "tailwindcss/preflight"; 
-@import "tailwindcss/utilities.css"
+@import "tailwindcss"; 
 
 .retro-window {
   border-width: 4px; 
@@ -10,7 +9,7 @@
 
 .retro-window .title-bar {
   background-color: #c9b6a1;
-  color: black;
+  color: yellow;
   font-weight: bold;
   padding: 4px;
   border-bottom: 2px solid #758650;

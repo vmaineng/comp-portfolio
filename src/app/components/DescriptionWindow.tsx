@@ -72,7 +72,7 @@ const DescriptionWindow: React.FC<DescriptionWindowProps> = ({
   return (
     <motion.div
       ref={windowRef}
-      className={`absolute z-10 bg-retro-gray-light border-4 border-outset border-retro-gray-dark shadow-md rounded-md p-0 w-80`}
+      // className={`absolute z-10 bg-retro-gray-light border-4 border-outset border-retro-gray-dark shadow-md rounded-md p-0 w-80`}
       style={{
         top: iconRect ? `${iconRect.bottom + 10}px` : "50%",
         left: iconRect ? `${iconRect.left}px` : "50%",
@@ -85,12 +85,12 @@ const DescriptionWindow: React.FC<DescriptionWindowProps> = ({
       custom={iconRect}
     >
       <div
-        className={`bg-retro-gray-dark p-2 border-b-2 border-retro-gray-light flex justify-between items-center`}
+      // className={`bg-retro-gray-dark p-2 border-b-2 border-retro-gray-light flex justify-between items-center`}
       >
         <h2 className="text-lg font-bold text-retro-yellow-dark">{title}</h2>
         <button
           onClick={onClose}
-          className="bg-retro-yellow-dark text-black border border-black px-1 text-sm focus:outline-none"
+          // className="bg-retro-yellow-dark text-black border border-black px-1 text-sm focus:outline-none"
         >
           [x]
         </button>
